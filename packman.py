@@ -181,7 +181,7 @@ class Coins:
         self.coin_pos = coin_pos
 
         if power:
-            self.image = pygame.image.load('dry-clean.png')
+            self.image = pygame.image.load('Power-Pellet.png')
             self.image = pygame.transform.scale(self.image, (self.cell_width - 3, self.cell_height - 4))
         elif not power:
             self.image = pygame.image.load('coin.png')
@@ -219,7 +219,6 @@ mixer.music.load('pacman_beginning.wav')
 # INTRO TEXTS #
 font_1 = pygame.font.Font('LoveGlitch.ttf', 30)
 font_2 = pygame.font.Font('SCOREBOARD.ttf', 30)
-# font = pygame.font.SysFont('LoveGlitch', 30)
 start_text = font_1.render('PUSH SPACE TO START THE GAME', True, RED_ORANGE)
 start_text_rect = start_text.get_rect()
 start_text_rect.center = (WIDTH / 2, HEIGHT - 55)
@@ -292,7 +291,6 @@ while running:
                     Enemies.add(Blinky)
                     Enemies.add(Clyde)
 
-                    # coins_list = list.copy(play_again_coins_list)
 
                 mixer.music.play(loops=-1)
                 game_status = 'playing'
@@ -317,7 +315,7 @@ while running:
     screen.fill(BLACK)
 
     if game_status == 'intro':
-        background_art = pygame.image.load('Pacman_intro_art_2.jpg')
+        background_art = pygame.image.load('Pacman_intro_art.jpg')
         background_art = pygame.transform.scale(background_art, (WIDTH, HEIGHT - 75))
         screen.blit(background_art, (0, 0))
         screen.blit(start_text, start_text_rect)
@@ -352,14 +350,14 @@ while running:
         grid = pygame.transform.scale(grid, (GRID_WIDTH, GRID_HEIGHT))
         screen.blit(grid, (GRID_BUFFER, GRID_BUFFER))
 
-        for i in range(29):                                                      # 28 Columns
+        """for i in range(29):                                                      # 28 Columns
             pygame.draw.line(screen, GRAY, (GRID_BUFFER + (i * CELL_WIDTH), GRID_BUFFER),
                              (GRID_BUFFER + (i * CELL_WIDTH),
                               HEIGHT - GRID_BUFFER))
         for j in range(31):                                                         # 30 Rows
             pygame.draw.line(screen, GRAY, (GRID_BUFFER, GRID_BUFFER + (j * CELL_HEIGHT)),
                              (WIDTH - GRID_BUFFER,
-                              GRID_BUFFER + (j * CELL_HEIGHT)))
+                              GRID_BUFFER + (j * CELL_HEIGHT)))"""
 
         if not player.update(move):
             move = pacman_prev_move
