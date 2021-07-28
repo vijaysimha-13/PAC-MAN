@@ -3,6 +3,13 @@ Pac-Man is an action maze chase video game; the player controls the eponymous ch
 Eating large flashing dots called "Power Pellets" causes the ghosts to turn blue, allowing Pac-Man to eat them for bonus points.
 
 
+
+
+
+
+
+
+
 ![Screenshot (996)](https://user-images.githubusercontent.com/71659773/127007928-1f179bac-8945-440b-a3b5-69ac877b6f33.png)
 
 
